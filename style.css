@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(weather.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'ubuntu',sans-serif;
+}
+.container{
+    max-width: 800px;
+    width: 100%;
+    background-color: rgb(21, 98, 161);
+    color: black;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-gap: 1rem;
+}
+.img_section{
+  background-image: url('back.jpg');
+  background-position: center;
+  position: relative;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.img_section::before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg,#5c6bc0 10%, #0d47a1 100%);
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 25px;
+}
+.default_info{
+    padding: 1.5rem;
+    text-align: center;
+}
+.default_info img{
+    width: 80%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.default_info h2{
+    font-size: 3rem;
+}
+.default_info h3{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+.weather_temp{
+    font-size: 4rem;
+    font-weight: 800;
+}
+.content_section{
+    padding: 1.5rem;
+}
+.content_section form{
+    margin: 1.5rem 0;
+    position: relative;
+}
+.content_section form input{
+    padding: 0.7rem 1rem;
+    font-family: inherit;
+    color:white;
+    width: 85%;
+    outline: none;
+    background: transparent;
+    border: 1px solid #37474f;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.content_section form button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    border:none;
+    background: navy;
+    color:#fff;
+    cursor: pointer;
+}
+.day_info .content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+}
+.day_info .content .title{
+    font-weight: 600;
+}
+.list_content ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 3rem 0rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+.list_content ul li{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in;
+}
+.list_content ul li:hover{
+    transform: scale(1.1);
+    background-color: #f4d1d1;
+    color:#232931;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+.list_content ul li img{
+    width: 50%;
+    object-fit: cover;
+}
+.icons{
+    opacity: 0;
+}
+.icons.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.7s;
+}
+@keyframes fadeIn {
+    to{
+        transition: all 0.5s ease-in;
+        opacity: 1;
+    }
+}
+
